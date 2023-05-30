@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  
+#texto {
+  margin-top: 10px;
+}
+
+.cartitas {
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-left: 34px;
+}
+
+.si {
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 0px;
+  letter-spacing: 0px;
+  text-align: justify;
+}
+
+.containercard {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cardg {
+  width: calc(50% - 20px);
+  margin-bottom: 20px;
+  perspective: 800px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fronts {
+  background-color: #B50D0D;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.backs {
+  height: 300px;
+  width: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.6s;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fronts {
+  transform: rotateY(0deg);
+  height: 300px;
+  width: 100%;
+}
+
+.backs {
+  transform: rotateY(180deg);
+  background-color: #B50D0D;
+  padding: 10px;
+}
+
+.cardg:hover .fronts {
+  transform: rotateY(180deg);
+}
+
+.cardg:hover .backs {
+  transform: rotateY(0deg);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardg:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cardg {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .containercard {
+    flex-wrap: nowrap;
+  }
+  
+  .cardg {
+    width: calc(25% - 20px);
+  }
+}
